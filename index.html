@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Define a codificação para suportar acentos e caracteres especiais. -->
+  <meta charset="UTF-8" />
+  <!-- Faz o layout adaptar-se a computadores, tablets e celulares. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Define o texto mostrado na aba do navegador. -->
+  <title>Explosão | Planejamento de Compras</title>
+  <!-- Carrega todos os estilos visuais do projeto. -->
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <!-- Tela inicial de autenticação; ela fica visível até o login ser validado. -->
+  <section class="login-screen" id="login-screen">
+    <!-- Área visual da tela de acesso. -->
+    <div class="login-visual" aria-label="Planejamento e Controle da Produção">
+      <!-- Camada usada para melhorar o contraste da imagem. -->
+      <div class="login-visual-overlay"></div>
+      <!-- Marca exibida sobre a imagem de referência. -->
+      <div class="login-brand-lockup">
+        <img src="assets/login-pcp.png" alt="PCP Next" class="login-reference-image" />
+      </div>
+    </div>
+
+    <!-- Área com o formulário de entrada no sistema. -->
+    <div class="login-panel">
+      <div class="login-card">
+        <!-- Identificação visual da marca. -->
+        <div class="login-card-mark">NEXT</div>
+        <p class="login-kicker">PCM · PLANEJAMENTO E CONTROLE</p>
+        <h1>Acesso ao painel</h1>
+        <p class="login-intro">Entre com o seu login e senha fornecido pelo ADM para consultar dados do PCM.</p>
+
+        <!-- Formulário cujo envio é tratado pelo assets/app.js. -->
+        <form id="login-form" class="login-form">
+          <label for="login-username">Usuário</label>
+          <input id="login-username" class="input" name="username" autocomplete="username" placeholder="Digite o seu usuário" required />
+          <label for="login-password">Senha</label>
+          <input id="login-password" class="input" name="password" type="password" autocomplete="current-password" placeholder="Digite a sua senha" required />
+          <button class="primary-btn login-submit" type="submit">Entrar no painel</button>
+          <!-- Mensagens de erro são inseridas aqui pelo JavaScript. -->
+          <p class="login-error" id="login-error" role="alert" aria-live="polite"></p>
+        </form>
+        <p class="login-help">Em caso de dúvida, procure o responsável pelo painel, Gabriel wender do prado</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estrutura principal; permanece oculta enquanto o usuário não estiver autenticado. -->
+  <div class="app-shell" id="dashboard-shell" hidden>
+    <!-- Barra lateral com a navegação entre as áreas do dashboard. -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <img class="next-logo" src="NEXT - Logo_edited.avif" alt="Next" />
+        <div><strong></strong><small></small></div>
+      </div>
+      <nav class="nav" aria-label="Navegação principal">
+        <button class="nav-item active" data-view="overview"><span>⌂</span> Visão geral</button>
+        <button class="nav-item" data-view="stock"><span>▤</span> Estoque</button>
+        <button class="nav-item" data-view="orders"><span>◷</span> Pedidos e demanda</button>
+        <button class="nav-item" data-view="models"><span>◈</span> Modelos</button>
+        <button class="nav-item" data-view="simulation"><span>⌁</span> Simulação</button>
+        <!-- Abre uma página separada com a evolução histórica do estoque. -->
+        <button class="nav-item" data-view="history"><span>⌁</span> Evolução do estoque</button>
+        <!-- Abre a área específica de materiais consumíveis. -->
+        <button class="nav-item" data-view="consumables"><span>▦</span> Consumíveis</button>
+        <!-- Abre a lista de itens selecionados para o processo de compra e exportação. -->
+        <button class="nav-item" data-view="purchaseProcess"><span>＋</span> Processo de compra</button>
+        <!-- Mostra pedidos maiores que a demanda do mesmo mês. -->
+        <button class="nav-item" data-view="excess"><span>!</span> Pedidos em excesso</button>
+        <!-- Abre os pedidos em atraso que precisam de acompanhamento. -->
+        <button class="nav-item" data-view="followup"><span>↗</span> Follow-up</button>
+        <!-- Abre a central local de avisos enviados pela produção. -->
+        <!--<button class="nav-item" data-view="productionAlerts"><span>⚠</span> Aviso da produção</button>-->
+      </nav>
+      <!-- Indica a origem dos dados carregados no dashboard. -->
+      <div class="sidebar-foot"><div class="status-dot"></div><div><b>Base local</b><small id="source-file">Carregando...</small></div></div>
+    </aside>
+
+    <!-- Conteúdo principal, atualizado dinamicamente pelo JavaScript. -->
+    <main class="main-content">
+      <!-- Cabeçalho com título da área, usuário conectado e ações globais. -->
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Abrir menu">☰</button>
+        <div>
+          <p class="eyebrow"></p>
+          <h1 id="page-title">Visão geral</h1>
+        </div>
+        <div class="top-actions">
+          <span class="user-badge" id="current-user-label"></span>
+          <span class="updated" id="updated-at">Atualizando...</span>
+          <button class="icon-button" id="refresh-data" title="Recarregar dados" aria-label="Recarregar dados">↻</button>
+          <button class="logout-button" id="logout-button" type="button">Sair</button>
+        </div>
+      </header>
+      <!-- O JavaScript insere aqui a visão geral ou a área selecionada. -->
+      <section id="app" class="content"></section>
+    </main>
+  </div>
+
+  <!-- Carrega a lógica de autenticação, dados, filtros e telas. -->
+  <script src="assets/app.js"></script>
+</body>
+</html>
