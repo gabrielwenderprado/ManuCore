@@ -166,7 +166,7 @@ const LOGIN_USERS = [
     analyst: ''
   },
     {
-    username: 'Edicleial',
+    username: 'Edicleia',
     password: 'edi2026',
     name: 'Edicleia',
     analyst: ''
