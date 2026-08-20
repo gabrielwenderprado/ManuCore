@@ -165,6 +165,18 @@ const LOGIN_USERS = [
     name: 'Administrador',
     analyst: ''
   },
+    {
+    username: 'Edicleial',
+    password: 'edi2026',
+    name: 'Edicleia',
+    analyst: ''
+  },
+    {
+    username: 'compras@next',
+    password: 'Next2026',
+    name: 'Time compras',
+    analyst: ''
+  },
    {
     username: 'gabriel',
     password: 'Next2026',
