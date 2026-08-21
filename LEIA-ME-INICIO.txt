@@ -1,0 +1,12 @@
+COMO ABRIR O DASHBOARD
+
+1. Extraia todos os ficheiros deste ZIP para uma pasta.
+2. Confirme que nesta mesma pasta aparecem:
+   - start-local.bat
+   - index.html
+   - assets
+   - data
+3. Dê dois cliques em start-local.bat.
+4. O navegador abrirá em http://127.0.0.1:5502/index.html.
+
+Se a pasta não tiver index.html, a extração foi incompleta ou está a ser usado um ZIP antigo. Extraia novamente o ZIP completo.
