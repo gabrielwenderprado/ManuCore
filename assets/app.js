@@ -174,7 +174,7 @@ const LOGIN_USERS = [
   {
     username: 'compras@next',
     password: 'Next2026',
-    name: 'Administrador',
+    name: 'Time Compras',
     analyst: ''
   },
    {
