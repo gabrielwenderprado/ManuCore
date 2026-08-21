@@ -158,24 +158,21 @@ function updateProductionAlertStatus(id, status) {
 }
 
 
-// As funções abaixo usam estes estados para filtrar os dados carregados do JSON.
-
-/* =============================================================
-   CONFIGURAÇÃO DOS ACESSOS — EDITE AQUI OS USUÁRIOS E SENHAS
-
-   Para cadastrar uma pessoa, copie um bloco e altere:
-   - username: nome usado na tela de login;
-   - password: senha usada na tela de login;
-   - name: nome exibido no topo do painel;
-   - analyst: analista associado. Use '' para permitir todas as carteiras.
-
-   IMPORTANTE: este é um login simples no navegador. As credenciais ficam
-   neste arquivo JavaScript e não oferecem a mesma proteção de um servidor.
-   Para alterar acessos no futuro, modifique somente esta lista.
-   ============================================================= */
 const LOGIN_USERS = [
 {
     username: 'admin',
+    password: 'Next2026',
+    name: 'Administrador',
+    analyst: ''
+  },
+  {
+    username: 'edicleia@next',
+    password: 'edi2026',
+    name: 'Edicleia',
+    analyst: ''
+  },
+  {
+    username: 'compras@next',
     password: 'Next2026',
     name: 'Administrador',
     analyst: ''
