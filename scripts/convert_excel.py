@@ -21,7 +21,7 @@ HISTORY_OUTPUT = PROJECT_ROOT / 'data' / 'historico-estoque.json'
 MODEL_SHEETS = [
     '10S', '13ldi-46kv', '13-69kv', '13AT', '15LDDI', '18lddi',
     'guin-16T', 'guin-25T', 'guin-45', 'replica-helio-base',
-    '13-uni', '10L', '10HDOC', '8paletes', 'kit-eletrica'
+    '13-uni', '10L', '10HDOC', '8paletes', 'kit-eletrica', '30-T','21T','7T','12-T' 
 ]
 
 
